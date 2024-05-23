@@ -1,10 +1,12 @@
 import { StyleSheet, Image, ImageSourcePropType } from "react-native";
 
+interface ImageViewerPropType {
+  placeholderImageSource: ImageSourcePropType;
+}
+
 export default function ImageViewer({
   placeholderImageSource,
-}: {
-  placeholderImageSource: ImageSourcePropType;
-}) {
+}: ImageViewerPropType) {
   return <Image source={placeholderImageSource} style={styles.image} />;
 }
 
