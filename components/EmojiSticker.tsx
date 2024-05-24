@@ -9,7 +9,7 @@ import Animated, {
 
 interface EmojiStickerProps {
   imageSize: number;
-  stickerSource?: ImageSourcePropType;
+  stickerSource: { image: ImageSourcePropType; label: string };
 }
 
 export default function EmojiSticker({
@@ -60,7 +60,8 @@ export default function EmojiSticker({
       <Animated.View style={[containerStyle, { top: -350 }]}>
         <GestureDetector gesture={doubleTap}>
           <Animated.Image
-            source={stickerSource}
+            source={stickerSource.image}
+            accessibilityLabel={stickerSource.label}
             resizeMode="contain"
             style={[imageStyle, { width: imageSize, height: imageSize }]}
           />

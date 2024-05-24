@@ -98,7 +98,7 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      <View style={styles.imageContainer}>
+      <View style={styles.imageContainer} accessibilityLabel="image">
         <View ref={imageRef} collapsable={false}>
           <ImageViewer
             placeholderImageSource={PlaceholderImage}

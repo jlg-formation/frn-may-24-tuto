@@ -7,12 +7,12 @@ interface EmojiListProps {
 }
 
 const emoji = [
-  require("../assets/images/emoji1.png"),
-  require("../assets/images/emoji2.png"),
-  require("../assets/images/emoji3.png"),
-  require("../assets/images/emoji4.png"),
-  require("../assets/images/emoji5.png"),
-  require("../assets/images/emoji6.png"),
+  { image: require("../assets/images/emoji1.png"), label: "100" },
+  { image: require("../assets/images/emoji2.png"), label: "smile" },
+  { image: require("../assets/images/emoji3.png"), label: "nails" },
+  { image: require("../assets/images/emoji4.png"), label: "goat" },
+  { image: require("../assets/images/emoji5.png"), label: "donuts" },
+  { image: require("../assets/images/emoji6.png"), label: "rainbow" },
 ];
 
 export default function EmojiList({ onSelect, onCloseModal }: EmojiListProps) {
@@ -28,8 +28,9 @@ export default function EmojiList({ onSelect, onCloseModal }: EmojiListProps) {
             onSelect(item);
             onCloseModal();
           }}
+          accessibilityLabel={item.label}
         >
-          <Image source={item} key={index} style={styles.image} />
+          <Image source={item.image} key={index} style={styles.image} />
         </Pressable>
       )}
     />
