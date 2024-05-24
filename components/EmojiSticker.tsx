@@ -21,11 +21,11 @@ export default function EmojiSticker({
   const doubleTap = Gesture.Tap()
     .numberOfTaps(2)
     .onStart(() => {
-      if (scaleImage.value !== imageSize * 2) {
-        scaleImage.value = scaleImage.value * 2;
-      } else {
+      if (scaleImage.value === imageSize * 2) {
         scaleImage.value = scaleImage.value / 2;
+        return;
       }
+      scaleImage.value = scaleImage.value * 2;
     });
 
   const imageStyle = useAnimatedStyle(() => {
